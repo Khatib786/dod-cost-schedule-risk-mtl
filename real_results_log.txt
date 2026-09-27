@@ -1,0 +1,35 @@
+Loaded 73,298 rows, 13 columns from realdata/projects_clean.csv
+Dropped 16,598 right-censored projects awarded after FY2017 (not enough elapsed time to show true overruns)
+Train: 37,326 projects (<= FY2014) | Test: 19,374 projects (> FY2014) | 9 features
+
+Features used (9): ['base_value', 'planned_duration_days', 'number_of_offers', 'military_branch_freq', 'naics_code_freq', 'psc_code_freq', 'contract_type_freq', 'extent_competed_freq', 'place_state_freq']
+
+ Training multi-task network (joint loss)
+  epoch    1  joint loss = 2.5205
+  epoch   20  joint loss = 2.2377
+  epoch   40  joint loss = 2.1727
+  epoch   60  joint loss = 2.1347
+  epoch   80  joint loss = 2.1158
+  epoch  100  joint loss = 2.1006
+  epoch  120  joint loss = 2.0952
+  epoch  140  joint loss = 2.0760
+
+Training single-task baselines 
+/usr/local/lib/python3.12/dist-packages/sklearn/neural_network/_multilayer_perceptron.py:785: ConvergenceWarning: Stochastic Optimizer: Maximum iterations (150) reached and the optimization hasn't converged yet.
+  warnings.warn(
+/usr/local/lib/python3.12/dist-packages/sklearn/neural_network/_multilayer_perceptron.py:785: ConvergenceWarning: Stochastic Optimizer: Maximum iterations (150) reached and the optimization hasn't converged yet.
+  warnings.warn(
+/usr/local/lib/python3.12/dist-packages/sklearn/neural_network/_multilayer_perceptron.py:785: ConvergenceWarning: Stochastic Optimizer: Maximum iterations (150) reached and the optimization hasn't converged yet.
+  warnings.warn(
+
+			RESULTS 
+Model               Metric 1            Metric 2            Metric 3            
+cost_MTL            MAE=0.5107  RMSE=0.9336  R2=0.0342
+cost_RF             MAE=0.5291  RMSE=0.9571  R2=-0.0151
+cost_MLP_single     MAE=0.5725  RMSE=1.0020  R2=-0.1127
+sched_MTL           Accuracy=0.6080  F1=0.5419  AUC=0.6523
+sched_RF            Accuracy=0.6172  F1=0.5833  AUC=0.7073
+sched_MLP_single    Accuracy=0.6031  F1=0.5391  AUC=0.6480
+risk_MTL            Accuracy=0.6067  F1=0.5415  AUC=0.6542
+risk_RF             Accuracy=0.6129  F1=0.5849  AUC=0.7015
+risk_MLP_single     Accuracy=0.6071  F1=0.5464  AUC=0.6506

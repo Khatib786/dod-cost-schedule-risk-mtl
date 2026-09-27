@@ -1,0 +1,31 @@
+cff-version: 1.2.0
+message: "If you use this code, please cite it as below."
+title: "A Shared-Trunk Multi-Task Network for Joint Cost, Schedule, and Risk Prediction in DoD Construction Contracts"
+type: software
+authors:
+  - family-names: Khatib
+    given-names: "" # Khatib Kabir
+date-released: 2026-09-27
+license: MIT
+repository-code: "" 
+references:
+  - type: dataset
+    title: "DoD Construction Contracts Dataset (FPDS-NG)"
+    authors:
+      - family-names: Hendrix
+        given-names: R.
+    institution:
+      name: Air Force Institute of Technology
+    doi: 10.17632/yk4s7pdsvk.1
+    license: CC-BY-4.0
+  - type: article
+    title: "Why do tree-based models still outperform deep learning on tabular data?"
+    authors:
+      - family-names: Grinsztajn
+        given-names: L.
+      - family-names: Oyallon
+        given-names: E.
+      - family-names: Varoquaux
+        given-names: G.
+    year: 2022
+    conference: "NeurIPS 2022 Datasets and Benchmarks Track"
